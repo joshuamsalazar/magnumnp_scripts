@@ -52,7 +52,7 @@ A = Aex_T
 
 state.material = {
     #"Ms": Js/constants.mu_0,
-    "Ms":  Ms,                        #0, #equiv 1.503 T
+    "Ms":  0,                        #0, #equiv 1.503 T
     "A": 0,
     "Ku": K1,               
     "Ku_axis": [0, 0, 1],
@@ -94,11 +94,24 @@ Hx = 0.001*hampl/constants.mu_0
 external = ExternalField([Hx, 0, 0])
 state.t = 0.
 llg = LLGSolver([demag, exchange, torque, aniso, external])
-logger = Logger(f"data_H{int(hampl):04d}", ['t', 'm', torque.h, aniso.h])
+#logger = Logger(f"data_H{int(hampl):04d}", ['t', 'm', torque.h, aniso.h])
+logger = Logger(f"data_H{int(hampl):04d}", scalars=['t','m',torque.h, external.h],
+                fields_every=500, scalars_every=1,
+                fields=['m',torque.h, external.h])
 write_vti(state.material, "cell.vti") 
 
-#minimizer = MinimizerBB([ aniso, external])
-#minimizer.minimize(state)
+if logger.is_resumable():
+    print("\t \n \t Logger data files found! ")
+    logger.resume(state)
+    default_increase=1e-9
+    print("\t \t last @ ", state.t.item(), "\t adding...", default_increase)
+    tf+= 1e-9*float(sys.argv[2]) if len(sys.argv) > 2 else default_increase
+    print("\t\t\tt_f:", tf)
+else:
+    print("nothing found")
+    minimizer = MinimizerBB([demag, exchange, aniso])
+    minimizer.minimize(state)
+
 
 cnt = 1
 name_minimized = f"data_H{int(hampl):04d}/m_relax_H{int(hampl):04d}_{0}.vti"
@@ -110,11 +123,12 @@ try:
     while state.t < tf-eps:
         logger << state
         m_formatted = [f"{x:1.3e}" for x in state.m.average().tolist()]
-        print("m: ", m_formatted,"\t t: ", f"{state.t.item():1.2e}", "\t Hext mT: ", hampl)
+        print("m: ", m_formatted,"\t t: ", f"{state.t.item():1.2e} /{tf:1.2e}", "\t Hext mT: ", hampl)
         if int(cnt%25) == int(0):
             write_vti(state.m, name_rxstep, state) #llg.accumulated_steps )
         llg.step(state, 1e-12)
         cnt+=1
+        
 except KeyboardInterrupt:
     print("\033[91m### Extiting job... ###")
 write_vti(state.m, name_relaxed, state)
