@@ -22,3 +22,4 @@ Then, it stores the data of the simulation into an extra folder for each externa
 
 The last script call would generate the following folders:
 
+![Simple output of xsweep.sh](../../assets/xsweep_002.png)
