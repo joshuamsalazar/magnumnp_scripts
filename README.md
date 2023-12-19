@@ -9,7 +9,7 @@ The folders in this repository are described as follows:
 ### config_files
 Here files for recovering custom settings for some helper programs usually used for performing the simulations. They are not mainly needed, but provide some features that may save you some time. ;)
 
-### h_ext_sweeps
+### [h_ext_sweeps](https://github.com/joshuamsalazar/magnumnp_scripts/tree/main/h_ext-sweeps/xsweep)
 Scripts for performing and visualizing external field sweeps.
 
 
