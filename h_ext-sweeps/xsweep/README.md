@@ -14,7 +14,7 @@ z.B.
 
 This instruction would call `relax.py` changing automatically the external field amplitude by 2 mT for each relaxation, starting from -10 mT until it reaches 10 mT
 
-![Simple call of xsweep.sh](../../../assets/xsweep_001.png)
+![Simple call of xsweep.sh](../../assets/xsweep_001.png)
 
 
 Then, it stores the data of the simulation into an extra folder for each external field amplitude applied. 
