@@ -22,7 +22,7 @@ git clone https://github.com/joshuamsalazar/magnumnp-field-scan.git .
 python3 m2.py 0
 ```
  
- 5. Check the generated .vti file and data to see if it agrees with the desired structure.
+ 5. Check the generated `material.vti` file and data to see if it agrees with the desired structure.
 
 ![Structure geometry to simulate with magnumNP](../assets/workflow_003.png)
 
@@ -34,4 +34,9 @@ python3 m2.py 0
  7. Generate the dataset with the results, `datsweep.dat`, by calling:
 ```
 ./xdatsweep.sh
+```
+
+ 8. _(Optional)_ Plot the magnetization dynamics results, `gmrx.gp`, for  $H_\text{ext}=0 \text{ mT}$ 
+```
+./xplot gmrx.gp 0
 ```
