@@ -102,7 +102,7 @@ renderView1.CameraParallelScale = 7.071067650912947e-06
 print("\n\t  \033[92m Saving image \033[0m")
 
 # save screenshot
-SaveScreenshot(f'plt_{name.split(".")[0]}_H{int(hampl):04d}.png', renderView1, ImageResolution=[1430, 762])
+SaveScreenshot(f'fig_{name.split(".")[0]}_H{int(hampl):04d}.png', renderView1, ImageResolution=[1430, 762])
 
 #================================================================
 # addendum: following script captures some of the application
