@@ -6,7 +6,7 @@ The xsweep.sh file takes three arguments:
 
 `$ ./xsweep.sh run.py init_h_ext final_h_ext incr`
 
-Where, `run.py` is the python magnumno main script, `init_h_ext` is the initial value of the external field amplitude desired for the sweep, `final_h_ext` is the final field amplitude value and `incr` is the integer change in amplitude desired.
+Where, `run.py` is the python magnumnp main script, `init_h_ext` is the initial value of the external field amplitude desired for the sweep, `final_h_ext` is the final field amplitude value and `incr` is the integer change in amplitude desired.
 
 z.B.
 
@@ -23,3 +23,7 @@ Then, it stores the data of the simulation into an extra folder for each externa
 The last script call would generate the following folders:
 
 ![Simple output of xsweep.sh](../../assets/xsweep_002.png)
+
+Then you can see the results by [plotting them](https://github.com/joshuamsalazar/magnumnp_scripts/tree/main/h_ext-sweeps/xplot)
+[plotting them](../xplot/README.md)
+
