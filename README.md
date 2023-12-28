@@ -12,6 +12,8 @@ Here files for recovering custom settings for some helper programs usually used 
 ### [h_ext_sweeps](https://github.com/joshuamsalazar/magnumnp_scripts/tree/main/h_ext-sweeps/xsweep)
 Scripts for performing and visualizing external field sweeps.
 
+### [File handlers/xclean](./file_handlers/xclean/README.md)
+Managing your files. _xclean_ cleans `.vti` files keeping just the last simulated state.
 
 ## P.D.
 
