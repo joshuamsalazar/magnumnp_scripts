@@ -13,7 +13,7 @@ Here files for recovering custom settings for some helper programs usually used 
 Managing your files. _xclean_ cleans `.vti` files keeping just the last simulated state.
 
 ### [h_ext_sweeps](https://github.com/joshuamsalazar/magnumnp_scripts/tree/main/h_ext-sweeps/xsweep)
-Scripts for performing and visualizing external field sweeps.
+Scripts for performing and visualizing external field sweeps. The full repo with "plug-and-play" scripts is here: [https://github.com/joshuamsalazar/magnumnp-field-scan](https://github.com/joshuamsalazar/magnumnp-field-scan)
 
 ### [Screenshot auto-generation](./paraview/xscreenshot/README.md)
 Auto generate screenshots with custom configurations from Paraview.
