@@ -5,11 +5,15 @@ This script automatically generates an screenshot of a top view of a vti file.
 You can call it directly as:
 
 ```bash
-./xscreenshot.sh 
+./xscreenshot.sh -2
 ```
+Where -2 is the external field value in mT.
 
-It uses the `pvpython` scripting application to work, so make sure you have Paraview installed and properly set up for you machine. You can find `pvpython` within the paraview\_X.x/bin in your Paraview installation directory. You may want to add it to your enviroment variables, (How do i do it?)
-To test it place it within the bin directory and run:
+The `.sh` script calls the following behind the scenes:
+
+It uses the `pvpython` scripting application to work, so make sure you have Paraview installed and properly set up for you machine. You can find `pvpython` within the paraview\_X.x/bin in your Paraview installation directory. 
+
+To test it: place `top_screenshot.py` and a `file.vti` within the Paraview\X.x/bin directory and run:
 
 ```bash
 pvpython top_screenshot.py file.vti 
